@@ -28,7 +28,7 @@ function CreatePage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation checks for all inputs
+    // validation checks
     if (!formData.name.trim()) {
       alert("Name is required!");
       nameRef.current.focus();
@@ -71,7 +71,6 @@ function CreatePage() {
       return;
     }
 
-    // Send POST request with XMLHttpRequest
     const xhr = new XMLHttpRequest();
     xhr.open(
       "POST",

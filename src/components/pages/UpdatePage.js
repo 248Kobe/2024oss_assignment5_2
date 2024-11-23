@@ -15,8 +15,6 @@ function UpdatePage() {
     email: "",
   });
   const [editCount, setEditCount] = useState(0);
-
-  // Refs for validation
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const phoneRef = useRef(null);
@@ -75,7 +73,7 @@ function UpdatePage() {
   };
 
   const validateField = (field) => {
-    // Existing validation
+    // validation
     if (field === "name" && !formData.name.trim()) {
       alert("Name is required!");
       nameRef.current.focus();
@@ -103,7 +101,6 @@ function UpdatePage() {
       return false;
     }
 
-    // Added validation for missing fields
     if (field === "relationship" && !formData.relationship.trim()) {
       alert("Relationship is required!");
       relationshipRef.current.focus();

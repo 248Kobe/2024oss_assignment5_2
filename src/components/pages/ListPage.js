@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 function ListPage() {
   const [friends, setFriends] = useState([]);
 
-  // Fetch friends using XMLHttpRequest
   const getFriends = () => {
     const xhr = new XMLHttpRequest();
     xhr.open(
@@ -24,7 +23,6 @@ function ListPage() {
     xhr.send();
   };
 
-  // Delete friend using XMLHttpRequest
   const deleteFriend = (id, name) => {
     if (window.confirm(`Are you sure you want to delete ${name}?`)) {
       const xhr = new XMLHttpRequest();
@@ -35,7 +33,7 @@ function ListPage() {
       xhr.onload = () => {
         if (xhr.status === 200) {
           alert("Friend deleted successfully!");
-          getFriends(); // Refresh the list after deletion
+          getFriends();
         } else {
           console.error("Failed to delete friend.");
         }
